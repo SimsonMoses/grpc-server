@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.course.grpc";
+option java_multiple_files = true;
+message CourseContent{
+  string contentId = 1;
+  string courseId = 2;
+  string contentDescription = 3;
+}
+
+message CourseContentRequest{
+  string courseId = 1;
+  string contentId = 2;
+}
+
+service getCourseContent{
+    rpc getCourseContent(CourseContentRequest) returns (CourseContent) {};
+}
