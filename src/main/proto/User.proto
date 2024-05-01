@@ -16,6 +16,10 @@ message User{
 message UserRequest{
   string email = 1;
 }
+message UserPresent{
+  bool isUserPresent = 1;
+}
 service UserService{
   rpc getUser(UserRequest) returns (User){};
+  rpc userExist(UserRequest) returns (UserPresent){};
 }
